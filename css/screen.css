@@ -98,3 +98,7 @@ form {
 .borrow_form {
 	margin-bottom:1em;
 }
+.hookers {
+	position: absolute;
+	bottom: 0;
+}
