@@ -21,6 +21,11 @@ $(document).ready(function() {
       window.location.href="borrower_profile.html";
   });
   $('.modal-trigger-lending-submitted').leanModal({
+      ready: function() {
+        var your_get_span1 = $('#you-get'),
+            your_get_modal = $('#you-get-modal');
+        your_get_modal.text(your_get);
+      },
       complete: function() {
           window.location.href="lender_profile.html";
       }
@@ -37,4 +42,29 @@ $(document).ready(function() {
       event.preventDefault();
       $('#submit_borrow').openModal();
   });
+
+//get value for amount cell lender_table and put in lender_form
+  $('#id_lender_table').find('tr').click(function () {
+
+    var $amount = $(this).find('.lender_amount').text();
+
+        $('#lend_amount').val($amount);
+        $('#lend_amount_label').addClass('active');
+        $('#lend_currency').val('BTC');
+        $('#lend_currency_label').addClass('active');
+      }
+  );
+
+//get value for amount cell for borrower_table and put in borrower_form
+  $('#id_borrower_table').find('tr').click(function () {
+
+    var $amount = $(this).find('.borrower_amount').text();
+
+        $('#borrow_amount').val($amount);
+        $('#borrow_amount_label').addClass('active');
+        $('#borrow_currency').val('BTC');
+        $('#borrow_currency_label').addClass('active');
+      }
+  );
+
 });

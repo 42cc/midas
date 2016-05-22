@@ -14,11 +14,12 @@ $(document).ready(function() {
       // If value has changed...
       how_much = parseFloat(how_much_input.val());
 
-      if (how_much !== 0 && period_days !== 0) {
 
-        your_get = parseFloat((how_much).toFixed(2));
+
+      if (how_much !== 0 && period_days !== 0) {
+        your_get = parseFloat((how_much).toFixed(6));
         your_get_span.text(your_get);
-        var total_return = parseFloat((percent * period_days * how_much).toFixed(2));
+        var total_return = parseFloat((percent * period_days * how_much + your_get).toFixed(6));
         your_return_span.text(total_return);
       };
 
@@ -59,9 +60,9 @@ $(document).ready(function() {
           getPeriod(period);
 
           if (how_much !== 0 && period_days !== 0) {
-            your_get = parseFloat((how_much).toFixed(2));
+            your_get = parseFloat((how_much).toFixed(6));
             your_get_span.text(your_get);
-            var total_return = parseFloat((percent * period_days * how_much + your_get).toFixed(2));
+            var total_return = parseFloat((percent * period_days * how_much + your_get).toFixed(6));
             your_return_span.text(total_return);
           };
 

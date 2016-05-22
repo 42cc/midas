@@ -47,7 +47,7 @@
                     <div class="input-field col s12">
 
                         <i class="material-icons prefix">account_circle</i>
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Alexander Vielimchanitsia">
+                        <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Mary Smith">
                         <label for="first_name">Facebook name:</label>
                     </div>
                     <div class="input-field col s12 ">
@@ -71,433 +71,461 @@
                       <div class="btn">
                         <span>Upload ID</span>
                         <input type="file">
-                      </div>
-                      <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                      </div>
                     </div>
-                    <div class="file-field input-field">
-                      <div class="btn">
-                        <span>Upload Video</span>
-                        <input type="file">
-                      </div>
-                      <div class="file-path-wrapper">
+                    <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
-                      </div>
                     </div>
-                    <button class="btn waves-effect waves-teal" type="submit" name="action">Save
-                        <i class="material-icons right">done</i>
-                    </button>
-                    <a class="waves-effect waves-light btn" href="index.html">
-                    <i class="material-icons left">replay</i>
-                    Back
-                    </a>
-                </form>
-                <h3>My statistics</h3>
-                <div class="col s12">
-                    <p class="col s7 rate-stars-text">
-                    Rate:
-                    </p>
-                    <p class="col s5 rate-stars-icons"><i class="material-icons left">grade</i>
-                    <i class="material-icons left">grade</i>
-                    <i class="material-icons left">grade</i>
-                    <i class="material-icons left">grade</i>
-                    <i class="material-icons left" id="rate-star-bad">grade</i>
-                    99%</p>
                 </div>
-                <div class="col s12">
-                    <p class="col s7">Total deposit:</p>
-                    <p class="col s5">100 BTC</p>
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <span>Upload Video</span>
+                    <input type="file">
                 </div>
-                <div class="col s12">
-                    <p class="col s7">Lended out:</p>
-                    <p class="col s5">42 BTC</p>
-                </div>
-                <div class="col s12">
-                    <p class="col s7">Amount to receive:</p>
-                    <p class="col s5">50 BTC</p>
-                </div>
-                <div class="col s12">
-                    <p class="col s7">Borrowed:</p>
-                    <p class="col s5">100 BTC</p>
-                </div>
-                <div class="col s12">
-                    <p class="col s7">Amount to repay:</p>
-                    <p class="col s5">110 BTC</p>
-                </div>
-                                <div class="col s12" id="borrower-money-buttons">
-                    <a class="waves-effect waves-light btn" href="index.html">
-                        <i class="material-icons left">play_for_work</i>
-                        Deposit
-                    </a>
-                    <a class="waves-effect waves-light btn" href="index.html">
-                        <i class="material-icons left">present_to_all</i>
-                        Withdraw
-                    </a>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
                 </div>
             </div>
+            <button class="btn waves-effect waves-teal" type="submit" name="action">Save
+                <i class="material-icons right">done</i>
+            </button>
+            <a class="waves-effect waves-light btn" href="index.html">
+                <i class="material-icons left">replay</i>
+                Back
+            </a>
+        </form>
+            <div id="transactions-content" style="display: none">
+                <h3>Transactions</h3>
+                <!-- show response after transactions -->
+                <table class="highlight responsive-table" id="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Hash</th>
+                            <th>Receiver address</th>
+                            <th>Status</th>
+                            <th>Sum</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        <!-- add data in js -->
+                    </tbody>
+                </table>
+            </div>
+        <h3>My statistics</h3>
+        <div class="col s12">
+            <p class="col s7 rate-stars-text">
+                Rate:
+            </p>
+            <p class="col s5 rate-stars-icons"><i class="material-icons left">grade</i>
+                <i class="material-icons left">grade</i>
+                <i class="material-icons left">grade</i>
+                <i class="material-icons left">grade</i>
+                <i class="material-icons left" id="rate-star-bad">grade</i>
+                99%</p>
+            </div>
+            <div class="col s12">
+                <p class="col s7">Total deposit:</p>
+                <p class="col s5">100 BTC</p>
+            </div>
+            <div class="col s12">
+                <p class="col s7">Lended out:</p>
+                <p class="col s5">42 BTC</p>
+            </div>
+            <div class="col s12">
+                <p class="col s7">Amount to receive:</p>
+                <p class="col s5">50 BTC</p>
+            </div>
+            <div class="col s12">
+                <p class="col s7">Borrowed:</p>
+                <p class="col s5">100 BTC</p>
+            </div>
+            <div class="col s12">
+                <p class="col s7">Amount to repay:</p>
+                <p class="col s5">110 BTC</p>
+            </div>
+            <div class="col s12" id="borrower-money-buttons">
+                <a class="waves-effect waves-light btn" href="index.html">
+                    <i class="material-icons left">play_for_work</i>
+                    Deposit
+                </a>
+                <a class="waves-effect waves-light btn" href="index.html">
+                    <i class="material-icons left">present_to_all</i>
+                    Withdraw
+                </a>
+                <a class="waves-effect waves-light btn" href="borrower.html">
+                    Borrow
+                </a>
+                <a class="waves-effect waves-light btn" href="lender.html">
+                    Lend
+                </a>
+            </div>
         </div>
-        <div id="applications" class="col s12">
-            <div class="center-container">
-                <h3>Available applications</h3>
-                <div id="application-1" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">John Smith</p>
-                            <div class="card-content">
-                                <p>Want to travel Canana</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 980</p>
-                            <h4>100BTC <small>&nbsp;+10BTC</small></h4>
-                            <p>2 days</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
+
+    </div>
+    <div id="applications" class="col s12">
+        <div class="center-container">
+            <h3>Available applications</h3>
+            <div id="application-1" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">John Smith</p>
+                        <div class="card-content">
+                            <p>Want to travel Canana</p>
                         </div>
                     </div>
-                </div>
-                <div id="application-2" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">Peter Norton</p>
-                            <div class="card-content">
-                                <p>Want to live forewer!</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 975</p>
-                            <h4>90BTC <small>&nbsp;+7BTC</small></h4>
-                            <p>3 month</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
-                        </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 980</p>
+                        <h4>100BTC <small>&nbsp;+10BTC</small></h4>
+                        <p>2 days</p>
                     </div>
-                </div>
-                <div id="application-1" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">John Smith</p>
-                            <div class="card-content">
-                                <p>Want to travel Canana</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 980</p>
-                            <h4>100BTC <small>&nbsp;+10BTC</small></h4>
-                            <p>2 days</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="application-2" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">Peter Norton</p>
-                            <div class="card-content">
-                                <p>Want to live forewer!</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 975</p>
-                            <h4>90BTC <small>&nbsp;+7BTC</small></h4>
-                            <p>3 month</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="application-1" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">John Smith</p>
-                            <div class="card-content">
-                                <p>Want to travel Canana</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 980</p>
-                            <h4>100BTC <small>&nbsp;+10BTC</small></h4>
-                            <p>2 days</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="application-2" class="card">
-                    <div class="row application-row">
-                        <div class="col s2">
-                            <img class="responsive-img" src="img/no-photo.jpg">
-                        </div>
-                        <div class="col s5 m7">
-                            <p class="card-title">Peter Norton</p>
-                            <div class="card-content">
-                                <p>Want to live forewer!</p>
-                            </div>
-                        </div>
-                        <div class="col s5 m3">
-                            <p class="card-title">Rating: 975</p>
-                            <h4>90BTC <small>&nbsp;+7BTC</small></h4>
-                            <p>3 month</p>
-                        </div>
-                        <div class="col s12 buttons center-align">
-                            <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
-                            <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
-                        </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="order_book" class="col s12">
-
-            <div class="center-container">
-
-                <h3>Create order</h3>
-                <div class="col s12">
-                    <div class="row">
-                        <div class="col s12">
-                            <ul class="tabs">
-                                <li class="tab col s6"><a href="#lend_form" class="active">Lend</a></li>
-                                <li class="tab col s6"><a href="#borrow_form">Borrow</a></li>
-                            </ul>
+            <div id="application-2" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">Peter Norton</p>
+                        <div class="card-content">
+                            <p>Want to live forewer!</p>
                         </div>
                     </div>
-                    <div id="lend_form" class="col s12">
-                        <form action="#" class="col s12 lend_form">
-                            <p>Lend money</p>
-                            <div class="input-field col s12">
-                                <input id="rate" type="number" step="any" class="validate" required>
-                                <label for="rate">Rate</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="amount" type="number" step="any" class="validate" required>
-                                <label for="amount">Amount</label>
-                            </div>
-                            <button type="submit" class="btn waves-effect waves-teal">Submit</button>
-                        </form>
-                        <div id="submit_lend" class="modal">
-                            <div class="modal-content">
-                              <h4>Thanks!</h4>
-                              <p>Your application is reviewed.</p>
-                              <p>You will receive notification.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
-                            </div>
-                        </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 975</p>
+                        <h4>90BTC <small>&nbsp;+7BTC</small></h4>
+                        <p>3 month</p>
                     </div>
-                    <div id="borrow_form" class="col s12">
-                        <form action="#" class="col s12 borrow_form">
-                            <p>Borrow money</p>
-                            <div class="input-field col s12">
-                                <input id="rate" type="number" step="any" class="validate" required>
-                                <label for="rate">Rate</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="amount" type="number" step="any" class="validate" required>
-                                <label for="amount">Amount</label>
-                            </div>
-                            <button type="submit" class="btn waves-effect waves-teal">Submit</button>
-                        </form>
-                        <div id="submit_borrow" class="modal">
-                            <div class="modal-content">
-                              <h4>Thanks!</h4>
-                              <p>Your application is reviewed.</p>
-                              <p>You will receive notification.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
-                            </div>
-                        </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
                     </div>
                 </div>
+            </div>
+            <div id="application-1" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">John Smith</p>
+                        <div class="card-content">
+                            <p>Want to travel Canana</p>
+                        </div>
+                    </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 980</p>
+                        <h4>100BTC <small>&nbsp;+10BTC</small></h4>
+                        <p>2 days</p>
+                    </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
+                    </div>
+                </div>
+            </div>
+            <div id="application-2" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">Peter Norton</p>
+                        <div class="card-content">
+                            <p>Want to live forewer!</p>
+                        </div>
+                    </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 975</p>
+                        <h4>90BTC <small>&nbsp;+7BTC</small></h4>
+                        <p>3 month</p>
+                    </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
+                    </div>
+                </div>
+            </div>
+            <div id="application-1" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">John Smith</p>
+                        <div class="card-content">
+                            <p>Want to travel Canana</p>
+                        </div>
+                    </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 980</p>
+                        <h4>100BTC <small>&nbsp;+10BTC</small></h4>
+                        <p>2 days</p>
+                    </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
+                    </div>
+                </div>
+            </div>
+            <div id="application-2" class="card">
+                <div class="row application-row">
+                    <div class="col s2">
+                        <img class="responsive-img" src="img/no-photo.jpg">
+                    </div>
+                    <div class="col s5 m7">
+                        <p class="card-title">Peter Norton</p>
+                        <div class="card-content">
+                            <p>Want to live forewer!</p>
+                        </div>
+                    </div>
+                    <div class="col s5 m3">
+                        <p class="card-title">Rating: 975</p>
+                        <h4>90BTC <small>&nbsp;+7BTC</small></h4>
+                        <p>3 month</p>
+                    </div>
+                    <div class="col s12 buttons center-align">
+                        <a class="btn-modal-accept waves-effect waves-light btn green accent-4" href="#modal_accept"><i class="material-icons left">done</i> Accept</a>
+                        <a class="btn-modal-decline waves-effect waves-light btn red accent-2" href="#modal_decline"><i class="material-icons left">delete_forever</i> Decline</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="order_book" class="col s12">
+
+        <div class="center-container">
+
+            <h3>Create order</h3>
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs">
+                            <li class="tab col s6"><a href="#lend_form" class="active">Lend</a></li>
+                            <li class="tab col s6"><a href="#borrow_form">Borrow</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="lend_form" class="col s12">
+                    <form action="#" class="col s12 lend_form">
+                        <p>Lend money</p>
+                        <div class="input-field col s12">
+                            <input id="lend_currency" type="text" step="any" class="validate" required>
+                            <label id="lend_currency_label"  for="lend_currency">Currency</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="lend_amount" type="number" step="any" class="validate" required>
+                            <label id="lend_amount_label" for="amount">Amount</label>
+                        </div>
+                        <button type="submit" class="btn waves-effect waves-teal">Submit</button>
+                    </form>
+                    <div id="submit_lend" class="modal">
+                        <div class="modal-content">
+                          <h4>Thanks!</h4>
+                          <p>Your application is reviewed.</p>
+                          <p>You will receive notification.</p>
+                      </div>
+                      <div class="modal-footer">
+                          <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                          <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
+                      </div>
+                  </div>
+
+                  <h3>Lender</h3>
+                  <table class="highlight responsive-table" id='id_lender_table'>
+                    <thead>
+                        <tr>
+                            <th>N</th>
+                            <th>Sum</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                            <th>Percent</th>
+                            <th>Profit</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="lender_amount">30.76</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.07%</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="lender_amount">21</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.24%</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="lender_amount">56</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.42%</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="lender_amount">35.5</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.55%</td>
+                        <td>4.4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="lender_amount">65.9</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.67%</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="lender_amount">34.99</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.73%</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="lender_amount">3.76</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.89%</td>
+                        <td>1</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <div id="borrow_form" class="col s12">
+            <form action="#" class="col s12 borrow_form">
+                <p>Borrow money</p>
+                <div class="input-field col s12">
+                    <input id="borrow_currency" type="text" step="any" class="validate" required>
+                    <label id="borrow_currency_label" for="borrow_currency">Currency</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="borrow_amount" type="number" step="any" class="validate" required>
+                    <label id="borrow_amount_label" for="borrow_amount">Amount</label>
+                </div>
+                <button type="submit" class="btn waves-effect waves-teal">Submit</button>
+            </form>
+            <div id="submit_borrow" class="modal">
+                <div class="modal-content">
+                  <h4>Thanks!</h4>
+                  <p>Your application is reviewed.</p>
+                  <p>You will receive notification.</p>
+              </div>
+              <div class="modal-footer">
+                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
+              </div>
+          </div>
+          <br>
+
+          <h3>Borrower</h3>
+          <table class="highlight responsive-table" id='id_borrower_table'>
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>Sum</th>
+                    <th>Currency</th>
+                    <th>Date</th>
+                    <th>Percent</th>
+                    <th>Payment</th>
+                </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td >1</td>
+                <td class="borrower_amount">0.5</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.95%</td>
+                <td>0.4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="borrower_amount">476</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.81%</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="borrower_amount">34.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.73%</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="borrower_amount">3.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.56%</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="borrower_amount">52.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.42%</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="borrower_amount">3.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.33%</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="borrower_amount">5.68</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.02%</td>
+                <td>14</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
 <div class="row">
 </div>
 
+</div>
+</div>
+</div>
 
-<h3>Lender</h3>
-<table class="highlight responsive-table">
-        <thead>
-        <tr>
-            <th>N</th>
-            <th>Sum</th>
-            <th>Currency</th>
-            <th>Date</th>
-            <th>Percent</th>
-            <th>Profit</th>
-          </tr>
-        </thead>
+</div>
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>30.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>12</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>21</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>7</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>56</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>6</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>35.5</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4.4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>65.9</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>2</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>34.99</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>1</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>1</td>
-          </tr>
-
-        </tbody>
-      </table>
-<br>
-<h3>Borrower</h3>
-<table class="highlight responsive-table">
-        <thead>
-        <tr>
-            <th>N</th>
-            <th>Sum</th>
-            <th>Currency</th>
-            <th>Date</th>
-            <th>Percent</th>
-            <th>Payment</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>0.5</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>0.4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>476</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>34.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>5</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>7</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>52.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>8</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>14</td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-        </div>
-    </div>
-
-  </div>
-
-  <!-- End Container -->
+<!-- End Container -->
 </div>
 
 <!-- Javascript section -->
@@ -506,6 +534,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 <script src="js/main.js"></script>
+<script src="js/show-transactions.js"></script>
 </body>
 
 </html>

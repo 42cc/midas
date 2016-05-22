@@ -85,3 +85,16 @@ form {
 	max-width: 786px;
 	margin: 0 auto;
 }
+
+.hash-address {
+	text-transform: lowercase;
+}
+
+#transactions-table a {
+	color: rgba(0,0,0,0.87);
+}
+
+.lend_form,
+.borrow_form {
+	margin-bottom:1em;
+}

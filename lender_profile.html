@@ -69,12 +69,35 @@
                         Back
                     </a>
                 </form>
-                <h3>My statistics</h3>
-                <div class="col s12">
-                    <p class="col s7 rate-stars-text">
+
+                <div id="transactions-content" style="display: none">
+                    <h3>Transactions</h3>
+                    <!-- show response after transactions -->
+                    <table class="highlight responsive-table" id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Hash</th>
+                                <th>Receiver address</th>
+                                <th>Status</th>
+                                <th>Sum</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- add data in js -->
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+              <h3>My statistics</h3>
+              <div class="col s12">
+                <p class="col s7 rate-stars-text">
                     Rate:
-                    </p>
-                    <p class="col s5 rate-stars-icons"><i class="material-icons left">grade</i>
+                </p>
+                <p class="col s5 rate-stars-icons"><i class="material-icons left">grade</i>
                     <i class="material-icons left">grade</i>
                     <i class="material-icons left">grade</i>
                     <i class="material-icons left">grade</i>
@@ -109,6 +132,12 @@
                     <a class="waves-effect waves-light btn" href="index.html">
                         <i class="material-icons left">present_to_all</i>
                         Withdraw
+                    </a>
+                    <a class="waves-effect waves-light btn" href="borrower.html">
+                        Borrow
+                    </a>
+                    <a class="waves-effect waves-light btn" href="lender.html">
+                        Lend
                     </a>
                 </div>
             </div>
@@ -265,215 +294,214 @@
                         </div>
                     </div>
                     <div id="lend_form" class="col s12">
-                        <form action="#" class="col s12 lend_form">
-                            <p>Lend money</p>
-                            <div class="input-field col s12">
-                                <input id="rate" type="number" step="any" class="validate" required>
-                                <label for="rate">Rate</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="amount" type="number" step="any" class="validate" required>
-                                <label for="amount">Amount</label>
-                            </div>
-                            <button type="submit" class="btn waves-effect waves-teal">Submit</button>
-                        </form>
-                        <div id="submit_lend" class="modal">
-                            <div class="modal-content">
-                              <h4>Thanks!</h4>
-                              <p>Your application is reviewed.</p>
-                              <p>You will receive notification.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
-                            </div>
+                    <form action="#" class="col s12 lend_form">
+                        <p>Lend money</p>
+                        <div class="input-field col s12">
+                            <input id="lend_currency" type="text" step="any" class="validate" required>
+                            <label id="lend_currency_label"  for="lend_currency">Currency</label>
                         </div>
-                    </div>
-                    <div id="borrow_form" class="col s12">
-                        <form action="#" class="col s12 borrow_form">
-                            <p>Borrow money</p>
-                            <div class="input-field col s12">
-                                <input id="rate" type="number" step="any" class="validate" required>
-                                <label for="rate">Rate</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="amount" type="number" step="any" class="validate" required>
-                                <label for="amount">Amount</label>
-                            </div>
-                            <button type="submit" class="btn waves-effect waves-teal">Submit</button>
-                        </form>
-                        <div id="submit_borrow" class="modal">
-                            <div class="modal-content">
-                              <h4>Thanks!</h4>
-                              <p>Your application is reviewed.</p>
-                              <p>You will receive notification.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-                              <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
-                            </div>
+                        <div class="input-field col s12">
+                            <input id="lend_amount" type="number" step="any" class="validate" required>
+                            <label id="lend_amount_label" for="amount">Amount</label>
                         </div>
-                    </div>
-                </div>
-<div class="row">
-</div>
+                        <button type="submit" class="btn waves-effect waves-teal">Submit</button>
+                    </form>
+                    <div id="submit_lend" class="modal">
+                        <div class="modal-content">
+                          <h4>Thanks!</h4>
+                          <p>Your application is reviewed.</p>
+                          <p>You will receive notification.</p>
+                      </div>
+                      <div class="modal-footer">
+                          <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                          <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
+                      </div>
+                  </div>
 
-<h3>Lender</h3>
-<table class="highlight responsive-table">
-        <thead>
-        <tr>
-            <th>N</th>
-            <th>Sum</th>
-            <th>Currency</th>
-            <th>Date</th>
-            <th>Percent</th>
-            <th>Profit</th>
-          </tr>
-        </thead>
+                  <h3>Lender</h3>
+                  <table class="highlight responsive-table" id='id_lender_table'>
+                    <thead>
+                        <tr>
+                            <th>N</th>
+                            <th>Sum</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                            <th>Percent</th>
+                            <th>Profit</th>
+                        </tr>
+                    </thead>
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>30.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>12</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>21</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>7</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>56</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>6</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>35.5</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4.4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>65.9</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>2</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>34.99</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>1</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>1</td>
-          </tr>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="lender_amount">30.76</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.07%</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="lender_amount">21</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.24%</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="lender_amount">56</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.42%</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="lender_amount">35.5</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.55%</td>
+                        <td>4.4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="lender_amount">65.9</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.67%</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="lender_amount">34.99</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.73%</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="lender_amount">3.76</td>
+                        <td id="id_lender_currency">BTC</td>
+                        <td>01.01.2016</td>
+                        <td>1.89%</td>
+                        <td>1</td>
+                    </tr>
 
-        </tbody>
-      </table>
-<br>
-<h3>Borrower</h3>
-<table class="highlight responsive-table">
-        <thead>
-        <tr>
-            <th>N</th>
-            <th>Sum</th>
-            <th>Currency</th>
-            <th>Date</th>
-            <th>Percent</th>
-            <th>Payment</th>
-          </tr>
-        </thead>
+                </tbody>
+            </table>
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>0.5</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>0.4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>476</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>34.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>5</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>7</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>52.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>8</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>4</td>
-          </tr>
-<tr>
-            <td>1</td>
-            <td>3.76</td>
-            <td>BTC</td>
-<td>01.01.32</td>
-<td>1%</td>
-<td>14</td>
-          </tr>
-
-        </tbody>
-      </table>
-
-</div>
 
         </div>
-    </div>
+        <div id="borrow_form" class="col s12">
+            <form action="#" class="col s12 borrow_form">
+                <p>Borrow money</p>
+                <div class="input-field col s12">
+                    <input id="borrow_currency" type="text" step="any" class="validate" required>
+                    <label id="borrow_currency_label" for="borrow_currency">Currency</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="borrow_amount" type="number" step="any" class="validate" required>
+                    <label id="borrow_amount_label" for="borrow_amount">Amount</label>
+                </div>
+                <button type="submit" class="btn waves-effect waves-teal">Submit</button>
+            </form>
+            <div id="submit_borrow" class="modal">
+                <div class="modal-content">
+                  <h4>Thanks!</h4>
+                  <p>Your application is reviewed.</p>
+                  <p>You will receive notification.</p>
+              </div>
+              <div class="modal-footer">
+                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
+              </div>
+          </div>
+          <br>
 
-  </div>
+          <h3>Borrower</h3>
+          <table class="highlight responsive-table" id='id_borrower_table'>
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>Sum</th>
+                    <th>Currency</th>
+                    <th>Date</th>
+                    <th>Percent</th>
+                    <th>Payment</th>
+                </tr>
+            </thead>
 
-  <!-- End Container -->
+            <tbody>
+              <tr>
+                <td >1</td>
+                <td class="borrower_amount">0.5</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.95%</td>
+                <td>0.4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="borrower_amount">476</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.81%</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="borrower_amount">34.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.73%</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="borrower_amount">3.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.56%</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="borrower_amount">52.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.42%</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="borrower_amount">3.76</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.33%</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="borrower_amount">5.68</td>
+                <td id="id_borrower_currency">BTC</td>
+                <td>01.01.2016</td>
+                <td>0.02%</td>
+                <td>14</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- End Container -->
 </div>
 
 <!-- Javascript section -->
@@ -482,6 +510,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 <script src="js/main.js"></script>
+<script src="js/show-transactions.js"></script>
 </body>
 
 </html>
