@@ -67,4 +67,26 @@ $(document).ready(function() {
       }
   );
 
+function myFunction() {
+        console.log($first_name.val());
+        console.log($user_email.val());
+
+}
+
+var urlKava = 'https://kavahq.com/';
+
+
+$('#id_login').click(function() {
+  // myFunction();
+https://kavahq.com/?email='email@mail.com'&?name='Some Body'
+  var $first_name = $('#first_name').val();
+  var $user_email = $('#user_email').val();
+  var resultUrl = urlKava + '?email='+ $user_email + '&name=' + $first_name;
+
+  console.log(resultUrl);
+  $.get(resultUrl);
+});
+
+
+
 });
