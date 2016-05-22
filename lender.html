@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Midas</title>
+  <meta http-equiv="X-UA-Compatible" content="chrome=IE7" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Css section -->
+  <link rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+
+</head>
+
+<body class="lime lighten-5">
+
+  <!-- Start Container -->
+  <div class="mainContainer">
+
+    <!-- Header -->
+    <div class="row" id="header">
+      <div class="col s12">
+        <a class="btn waves-effect pull-right" href="lender_profile.html"><i class="material-icons left">account_box</i> Profile</a>
+        <h1 class="main-test-logo">Lend money</h1>
+      </div>
+    </div>
+    <form action="#">
+      <p>
+      Currency:
+        <input name="get_money1" type="radio" id="currency-btc" checked/>
+        <label for="currency-btc">BTC</label>
+        <input name="get_money1" type="radio" id="currency-usd" />
+        <label for="currency-usd">USD</label>
+        <input name="get_money1" type="radio" id="currency-uah"  />
+        <label for="currency-uah">UAH</label>
+      </p>
+      <p>
+      How much:
+        <input name="get_money" type="number" id="how_much" min="1">
+      </p>
+      <p>
+      Period:
+        <input name="get_money2" type="radio" id="day" />
+        <label for="day">Day</label>
+        <input name="get_money2" type="radio" id="week" />
+        <label for="week">Week</label>
+        <input name="get_money2" type="radio" id="1month"  />
+        <label for="1month">1 month</label>
+        <input name="get_money2" type="radio" id="6month"  />
+        <label for="6month">6 month</label>
+        <input name="get_money2" type="radio" id="year"  />
+        <label for="year">1 year</label>
+      </p>
+      <p>
+        You pay: <span id="you-get">0</span>
+      </p>
+      <p>
+        You will earn: <span id="you-return">0</span>
+      </p>
+      <p>
+        Set the notification by:<br>
+        <div class="checkboxes">
+        <input type="checkbox" id="reminder_email"/>
+        <label for="reminder_email">Email</label><br>
+        <input type="checkbox" id="reminder_phone"/>
+        <label for="reminder_phone">Phone message</label>
+        </div>
+      </p>
+      <a class="waves-effect waves-teal btn-flat" href="index-2.html">Cancel</a>
+      <button class="btn waves-effect waves-light modal-trigger-lending-submitted" data-target="submit" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <div id="submit" class="modal modal-lending-submitted">
+        <div class="modal-content">
+          <h4>Thanks!</h4>
+          <p>Your application is submitted.</p>
+          <p>You pay:<span id="you-get-modal">0</span></p>
+          <p>Your wallet: 17bbEgzEURaLHnGXibgPrT3NZhijmT9AHq</p>
+          <img class="responsive-img" src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=17bbEgzEURaLHnGXibgPrT3NZhijmT9AHq">
+          <p>You will receive notification.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="lender_profile.html" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+          <a href="lender_profile.html" class=" modal-action modal-close waves-effect waves-green btn-flat"><img src="img/square-facebook-16.png"> Share</a>
+        </div>
+      </div>
+  </form>
+    </form>
+    <!-- End Container -->
+  </div>
+
+  <!-- Javascript section -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/percent_calc.js"></script>
+</body>
+
+</html>

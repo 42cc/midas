@@ -8,18 +8,93 @@ body {
 	color: #424242;
 	text-align: center;
 }
-
-
-#get-money-button {
-	position: relative;
-	left: 44%;
+.main-description {
+	color: #bdbdbd;
+	text-align: center;
+}
+.btn-flat {
+	float: right;
+	padding-right: 10px;
+}
+form {
+	width: 50%;
+	margin: 0 auto;
+	font-size: 16pt;
+}
+#how_much {
+	width: 50px;
+}
+.checkboxes {
+	margin-left: 20px;
 }
 
-#creditor-button {
-	height: 10px;
-	margin: 1em;
+#get-money-button {
+  margin: 15em auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 10em;
 }
 
 .pull-right {
 	float: right;
+}
+
+.application-row {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}
+
+#borrower-profile-form .btn {
+	font-size: 10pt;
+}
+#borrower-profile-form button,
+#borrower-profile-form a {
+	float: right;
+	margin-right: 2px;
+}
+#rate-star-bad {
+	color: #78909c;
+}
+
+
+#borrower-money-buttons a {
+	margin-top: 2px;
+}
+
+@media only screen and (max-width: 1168px) {
+	.rate-stars-icons {
+		width: 70% !important;
+	}
+	.rate-stars-text {
+		width: 30% !important;
+	}
+}
+@media only screen and (max-width: 1048px) {
+	.rate-stars-icons {
+		width: 80% !important;
+	}
+	.rate-stars-text {
+		width: 20% !important;
+	}
+}
+
+.center-container {
+	max-width: 786px;
+	margin: 0 auto;
+}
+
+.hash-address {
+	text-transform: lowercase;
+}
+
+#transactions-table a {
+	color: rgba(0,0,0,0.87);
+}
+
+.lend_form,
+.borrow_form {
+	margin-bottom:1em;
 }
