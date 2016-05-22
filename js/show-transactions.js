@@ -9,6 +9,28 @@ $(document).ready(function() {
 
       transactions_table.find("tbody").html('');
 
+      $.each(data.unconfirmed_transactions, function( t_index, unconfirmed_transactions ) {
+        var output = unconfirmed_transactions.outputs[0];
+
+        var sender_addresses = output.addresses;
+        
+        var status = "Not confirmed",
+            status_color = "#c62828";
+
+        if (sender_addresses) {
+          transactions_table.find("tbody").append(
+            '<tr>'+
+              '<td class="tooltipped" data-position="top" data-delay="50" data-tooltip="' + unconfirmed_transactions.hash + '">'+
+                '<a href="https://blockchain.info/tx/' + unconfirmed_transactions.hash + '">' + unconfirmed_transactions.hash.substring(0,10) + '...</a></td>'+
+              '<td>' + sender_addresses[0] + '</td>'+
+              '<td style="color: ' + status_color + '">' + status + '</td>'+
+              '<td>' + output.amount / 100000000 + ' BTC</td>'+
+              '<td>-</td>'+
+            '</tr>'
+          );
+        };
+      });
+
       $.each(data.transactions, function( t_index, transaction ) {
         var date = transaction.block_time.replace("T", " ");
         var date = date.replace("Z", "");
@@ -16,13 +38,9 @@ $(document).ready(function() {
 
         var sender_addresses = output.addresses;
         
-        if (transaction.confirmations == 0) {
-          var status = "Not confirmed",
-              status_color = "#c62828";
-        } else {
-          var status = "Confirmed",
-              status_color = "#2e7d32";
-        }
+        var status = "Confirmed",
+            status_color = "#2e7d32";
+
         if (sender_addresses) {
           transactions_table.find("tbody").append(
             '<tr>'+
@@ -35,8 +53,8 @@ $(document).ready(function() {
             '</tr>'
           );
         };
-
       });
+
       if (transactions_table.find("tbody").html().length > 10 && transactions_content_display == "none") {
         transactions_content.css('display', 'block');
       };
